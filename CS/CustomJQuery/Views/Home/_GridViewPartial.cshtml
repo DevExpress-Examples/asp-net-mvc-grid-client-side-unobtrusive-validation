@@ -1,0 +1,49 @@
+@model IList<CustomJQuery.Models.Person>
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "grid";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+        settings.SettingsEditing.AddNewRowRouteValues = new { Controller = "Home", Action = "GridViewPartialAddNew" };
+        settings.SettingsEditing.UpdateRowRouteValues = new { Controller = "Home", Action = "GridViewPartialUpdate" };
+        settings.SettingsEditing.DeleteRowRouteValues = new { Controller = "Home", Action = "GridViewPartialDelete" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow;
+
+
+        settings.SettingsEditing.ShowModelErrorsForEditors = true;
+        settings.SettingsBehavior.ConfirmDelete = true;
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.NewButton.Visible = true;
+        settings.CommandColumn.DeleteButton.Visible = true;
+        settings.CommandColumn.EditButton.Visible = true;
+        settings.KeyFieldName = "ID";
+        settings.SettingsPager.Visible = true;
+        settings.Settings.ShowGroupPanel = true;
+        settings.Settings.ShowFilterRow = false;
+        settings.SettingsBehavior.AllowSelectByRowClick = false;
+        settings.Columns.Add("ID");
+        settings.Columns.Add("Name");
+        settings.Columns.Add("CompanyName");
+        settings.Columns.Add("BirthDate");
+        settings.Columns.Add("CheckAge");
+        settings.SetEditFormTemplateContent(c =>
+        {
+            Html.RenderPartial("EditFormPartial",
+           !c.Grid.IsNewRowEditing ?
+               Model.FirstOrDefault(m => m.ID == Convert.ToInt32(DataBinder.Eval(c.DataItem, "ID"))) :
+               new CustomJQuery.Models.Person()
+               {
+                   ID = Model.OrderByDescending(p => p.ID)
+                      .First()
+                      .ID + 1
+               });
+        });
+    });
+    if (ViewData["EditError"] != null)
+    {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

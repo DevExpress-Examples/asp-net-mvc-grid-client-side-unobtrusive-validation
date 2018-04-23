@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>This project demonstrates a custom client side age validation based on a custom attribute. Note, client side Validation is performed if checkbox is checked</h2>
+<script type="text/javascript">
+    $(function () {
+        // Registering  custom adapter
+        $.validator.unobtrusive.adapters.add('rangedate', ['mindate'],
+            function (options) {
+                var params = {
+                    minDate: options.params.mindate,                   
+                };
+                options.rules['rangeDate'] = params;
+                if (options.message) {
+                    options.messages['rangeDate'] = options.message;
+                }
+            });
+        // Add validator function
+        $.validator.addMethod('rangeDate',
+            function (value, element, param) {
+                if (!CheckAge.GetChecked()) {
+                    return true;
+                }
+                else {
+                    var msecPerYear = 1000 * 60 * 60 * 24 * 365;
+                    var years = (Date.now() - BirthDate.GetValue().getTime()) / msecPerYear;                    
+                    if (years < parseInt(param.minDate, 10))
+                        return false;
+                    else
+                        return true;
+                }
+            }
+        );
+    }(jQuery));
+
+    function UpdateGridView() {
+        PrepareValidationScripts();        
+        var validator = $.data($('#frmPerson')[0], 'validator');
+        if (validator.form())
+            grid.UpdateEdit();
+    }
+
+    function PrepareValidationScripts() {
+        var form = $('#frmPerson');
+        if (form.executed)
+            return;
+        form.removeData("validator");
+        $.validator.unobtrusive.parse(document);
+        form.executed = true;
+    }
+</script>
+@Html.Action("GridViewPartial")

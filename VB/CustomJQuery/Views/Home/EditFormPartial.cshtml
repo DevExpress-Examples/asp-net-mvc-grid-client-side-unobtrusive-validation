@@ -1,0 +1,106 @@
+﻿@model CustomJQuery.Models.Person
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "frmPerson" }))
+{
+    <table>
+        <tr>
+            <td>
+                @Html.DevExpress().Label(s =>
+           {
+               s.AssociatedControlName = "ID";
+               s.Text = "ID";
+           }).GetHtml()
+            </td>
+            <td>
+                @Html.DevExpress().TextBox(s =>
+           {
+               s.Name = "ID";
+               s.ReadOnly = true;
+               s.ShowModelErrors = true;
+
+           }).Bind(Model.ID).GetHtml()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DevExpress().Label(s =>
+           {
+               s.AssociatedControlName = "Name";
+               s.Text = "Name";
+           }).GetHtml()
+            </td>
+            <td>
+                @Html.DevExpress().TextBox(s =>
+           {
+               s.Name = "Name";
+               s.ShowModelErrors = true;
+           }).Bind(Model.Name).GetHtml()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DevExpress().Label(s =>
+           {
+               s.AssociatedControlName = "CompanyName";
+               s.Text = "Company";
+           }).GetHtml()
+            </td>
+            <td>
+                @Html.DevExpress().TextBox(s =>
+           {
+               s.Name = "CompanyName";
+               s.ShowModelErrors = true;
+           }).Bind(Model.CompanyName).GetHtml()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DevExpress().Label(s =>
+           {
+               s.AssociatedControlName = "BirthDate";
+               s.Text = "BirthDate";
+           }).GetHtml()
+            </td>
+            <td>
+                @Html.DevExpress().DateEdit(s =>
+           {
+               s.Name = "BirthDate";
+               s.ShowModelErrors = true;
+           }).Bind(Model.BirthDate).GetHtml()
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DevExpress().Label(s =>
+           {
+               s.AssociatedControlName = "CheckAge";
+               s.Text = "CheckRequired";
+           }).GetHtml()
+            </td>
+            <td>
+                @Html.DevExpress().CheckBox(s =>
+           {
+               s.Name = "CheckAge";
+               s.ShowModelErrors = true;
+           }).Bind(Model.CheckAge).GetHtml()
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="align-items: flex-end">
+                @Html.DevExpress().HyperLink(s =>
+           {
+               s.Name = "SaveProduct";
+               s.Properties.Text = "Save";
+               s.NavigateUrl = "javascript:UpdateGridView();";
+           }).GetHtml()
+                @Html.DevExpress().HyperLink(s =>
+           {
+               s.Name = "CancelProduct";
+               s.Properties.Text = "Cancel";
+               s.NavigateUrl = "javascript:grid.CancelEdit();";
+           }).GetHtml()
+            </td>
+        </tr>
+    </table>
+}
+
