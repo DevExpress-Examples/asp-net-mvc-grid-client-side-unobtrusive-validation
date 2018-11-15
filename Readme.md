@@ -1,3 +1,12 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/CustomJQuery/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/CustomJQuery/Controllers/HomeController.vb))
+* **[CustomAttribute.cs](./CS/CustomJQuery/Models/CustomAttribute.cs) (VB: [CustomAttribute.vb](./VB/CustomJQuery/Models/CustomAttribute.vb))**
+* [Person.cs](./CS/CustomJQuery/Models/Person.cs) (VB: [Person.vb](./VB/CustomJQuery/Models/Person.vb))
+* [_GridViewPartial.cshtml](./CS/CustomJQuery/Views/Home/_GridViewPartial.cshtml)
+* [Index.cshtml](./CS/CustomJQuery/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to implement client-side unobtrusive validation using a custom attribute
 
 
