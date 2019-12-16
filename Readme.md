@@ -1,11 +1,11 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [HomeController.cs](./CS/CustomJQuery/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/CustomJQuery/Controllers/HomeController.vb))
-* **[CustomAttribute.cs](./CS/CustomJQuery/Models/CustomAttribute.cs) (VB: [CustomAttribute.vb](./VB/CustomJQuery/Models/CustomAttribute.vb))**
-* [Person.cs](./CS/CustomJQuery/Models/Person.cs) (VB: [Person.vb](./VB/CustomJQuery/Models/Person.vb))
-* [_GridViewPartial.cshtml](./CS/CustomJQuery/Views/Home/_GridViewPartial.cshtml)
-* [Index.cshtml](./CS/CustomJQuery/Views/Home/Index.cshtml)
+* [HomeController.cs](./CS/E4924/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/E4924/Controllers/HomeController.vb))
+* **[CustomAttribute.cs](./CS/E4924/Models/CustomAttribute.cs) (VB: [CustomAttribute.vb](./VB/E4924/Models/CustomAttribute.vb))**
+* [Person.cs](./CS/E4924/Models/Person.cs) (VB: [Person.vb](./VB/E4924/Models/Person.vb))
+* [_GridViewPartial.cshtml](./CS/E4924/Views/Home/_GridViewPartial.cshtml)
+* [Index.cshtml](./CS/E4924/Views/Home/Index.cshtml)
 <!-- default file list end -->
 # GridView - How to implement client-side unobtrusive validation using a custom attribute
 <!-- run online -->
