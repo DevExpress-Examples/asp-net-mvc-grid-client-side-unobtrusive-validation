@@ -13,8 +13,7 @@
 <!-- run online end -->
 
 
-<p><strong>Updated: </strong></p>
-<p>Starting with version 14.1, unobtrusive validation works for built-in EditForm out of the box (see <a href="https://www.devexpress.com/Support/Center/p/S173266">Support unobtrusive validation for the GridView's built-in edit form</a>). You need to wrap GridView in a form and validation scripts will be automatically registered on a callback.</p>
+<p>You need to wrap GridView in a form and validation scripts will be automatically registered on a callback.</p>
 
 
 ```cs
