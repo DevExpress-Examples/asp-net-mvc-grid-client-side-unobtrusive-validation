@@ -1,6 +1,4 @@
 ﻿@ModelType IList(Of E4924.Person)
-@Imports DevExpress.Web.ASPxEditors
-@Imports Devexpress.Web.ASPxGridView
 @Code
     Dim grid = Html.DevExpress().GridView(Sub(settings)
 
@@ -11,6 +9,7 @@
                                               settings.SettingsEditing.UpdateRowRouteValues = New With {.Controller = "Home", .Action = "GridViewPartialUpdate"}
                                               settings.SettingsEditing.DeleteRowRouteValues = New With {.Controller = "Home", .Action = "GridViewPartialDelete"}
                                               settings.SettingsEditing.Mode = GridViewEditingMode.EditFormAndDisplayRow
+
 
                                               settings.SettingsEditing.ShowModelErrorsForEditors = True
                                               settings.SettingsBehavior.ConfirmDelete = True

@@ -13,7 +13,7 @@ namespace E4924.Models
         [Required]
         public string Name { set; get; }
         public string CompanyName { set; get; }
-        [Custom(MinAge=18)]
+        [Custom(MinAge = 18)]
         public DateTime BirthDate { set; get; }
         public bool CheckAge { set; get; }
     }
