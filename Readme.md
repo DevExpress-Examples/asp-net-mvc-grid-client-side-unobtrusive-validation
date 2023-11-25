@@ -15,12 +15,12 @@ Follow the steps below to implement client-side unobtrusive validation:
 3. Write a custom adapter based on custom parameters that are passed from the server.
 4. Add a custom validation method.
 
-> [!NOTE]
-> Wrap the [Grid View](https://docs.devexpress.com/AspNetMvc/8966/components/grid-view) extension in a `<form>` element that can be rendered with Html.BeginForm()﻿. Validation scripts will be automatically registered on a callback.
-> ```cs
-> @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "frm" })) {
->     @Html.Action("GridViewPartial")
-> }
+Wrap the [Grid View](https://docs.devexpress.com/AspNetMvc/8966/components/grid-view) extension in a `<form>` element that can be rendered with Html.BeginForm()﻿. Validation scripts will be automatically registered on a callback.
+
+```cs
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "frm" })) {
+    @Html.Action("GridViewPartial")
+}
 ```
 
 ## Files to Review
