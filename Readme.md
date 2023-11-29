@@ -8,7 +8,7 @@
 **[[Run Online]](https://codecentral.devexpress.com/e4924/)**
 <!-- run online end -->
 
-Follow the steps below to implement client-side unobtrusive validation:
+Follow the steps below to implement unobtrusive client-side validation:
 
 1. Create a [ValidationAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.validationattribute) class descendant.
 2. Implement the [IClientValidatable](https://learn.microsoft.com/en-us/dotnet/api/system.web.mvc.iclientvalidatable) interface for this class to enable client validation.
