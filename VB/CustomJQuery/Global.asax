@@ -1,1 +1,1 @@
-<%@ Application Codebehind="Global.asax.vb" Inherits="CustomJQuery.MvcApplication" Language="vb" %>
+<%@ Application Codebehind="Global.asax.vb" Inherits="CustomJQuery.MvcApplication" Language="VB" %>

@@ -12,8 +12,8 @@
                     minDate: options.params.mindate,                   
                 };
                 options.rules['rangeDate'] = params;
-                if (options.message == "") {
-                    options.messages['rangeDate'] = "Age must be more that " + options.params.mindate.toString();
+                if (options.message) {
+                    options.messages['rangeDate'] = options.message;
                 }
             });
         // Add validator function
